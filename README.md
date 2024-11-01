@@ -11,23 +11,23 @@ Heute habe ich mich zum ersten Mal in meiner Zeit im Lern-Atelier direkt an die 
 
 
 ## 01.11
-- [ ] Als Spieler möchte ich, dass das Spiel ein Raster erstellt. /
-Erläuterung: Fügen den Code für GridManager.cs hinzu, der für die Erstellung des Gitters verantwortlich ist.
-- [ ] Als Spieler möchte ich, dass das Gitter Zellen hat. /
-Erläuterung: Code für Cell.cs hinzufügen, der für jede einzelne Zelle zuständig ist.
-- [ ] Als Spieler möchte ich, dass die Zellen Punkte haben können. /
-Erläuterung: Code schreiben, um Punkte zu erzeugen.
-- [ ] Als Spieler möchte ich mit den Punkten interagieren können. /
-Erläuterung: Code schreiben, um mit den Punkten zu interagieren.
+- [x] Als Spieler möchte ich, dass das Spiel ein Raster erstellt, damit ich Platz zum Spielen habe. /
+Erläuterung: Erstellen GridManager.cs, das für die Erstellung des Gitters verantwortlich ist.
+- [x] Als Spieler möchte ich, dass das Gitter Zellen hat, in die man Punkte und Linien setzen kann. /
+Erläuterung: Erstellen Cell.cs, das für jede einzelne Zelle zuständig ist.
+- [x] Als Spieler möchte ich, dass die Zellen Punkte haben, damit ich mit ihnen interagieren kann. /
+Erläuterung: Schreiben Code, um die Punkte zu erstellen.
+- [ ] Als Spieler möchte ich in der Lage sein, Linien zwischen den Punkten zu ziehen, damit ich das Feld füllen und gewinnen kann. /
+Erläuterung: Schreibe Code, um mit den Punkten zu interagieren.
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute habe ich damit begonnen, die Sprites der Zellen zu ändern, damit sie normal aussehen. Dann habe ich Code geschrieben, um die Punkte zu erstellen und mit ihnen zu interagieren, aber ich bin auf das Problem gestoßen, dass die Punkte aus irgendeinem Grund nicht angezeigt werden. Es stellte sich heraus, dass das Problem darin bestand, dass der Shader nicht korrekt gerendert wurde und die Punkte nicht angezeigt wurden. Ich habe versucht, das Problem zu beheben, und das ist mir auch gelungen, aber die anderen Materialien und Shader sind für 3D optimiert und sehen in 2D absolut grauenhaft aus. Also beschloss ich, meinen eigenen Shader mit Hilfe von AI zu schreiben. Am Ende hat das bei mir auch nicht funktioniert. Um es kurz zu machen, die Punkte werden immer noch nicht angezeigt, und ich werde versuchen, dieses Problem nächste Woche zu lösen.
 
 
 ## 08.11
-- [ ] 123
-- [ ] 123
-- [ ] 123
-- [ ] 123
+- [ ] Als Spieler möchte ich, dass die Punkte angezeigt werden, damit ich sie sehen und später mit ihnen interagieren kann.
+- [ ] Als Spieler möchte ich in der Lage sein, Linien zwischen den Punkten zu ziehen, damit ich das Feld füllen und gewinnen kann.
+- [ ] Als Spieler möchte ich zwei gleichfarbige Punkte auf dem Raster haben, damit ich sie mit Linien verbinden kann.
+- [ ] Als Spieler möchte ich gewinnen können, damit ich gewinnen kann.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
