@@ -12,7 +12,7 @@ Heute habe ich mich zum ersten Mal in meiner Zeit im Lern-Atelier direkt an die 
 
 ## 01.11
 - [ ] Als Spieler möchte ich, dass das Spiel ein Raster erstellt. /
-Erläuterung: Fügen Sie den Code für GridManager.cs hinzu, der für die Erstellung des Gitters verantwortlich ist.
+Erläuterung: Fügen den Code für GridManager.cs hinzu, der für die Erstellung des Gitters verantwortlich ist.
 - [ ] Als Spieler möchte ich, dass das Gitter Zellen hat. /
 Erläuterung: Code für Cell.cs hinzufügen, der für jede einzelne Zelle zuständig ist.
 - [ ] Als Spieler möchte ich, dass die Zellen Punkte haben können. /
