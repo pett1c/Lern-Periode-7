@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class GridManager : MonoBehaviour
 {
@@ -7,111 +8,36 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int width = 5;
     [SerializeField] private int height = 5;
     [SerializeField] private float cellSize = 1f;
-
-    [Header("Prefabs")]
     [SerializeField] private GameObject cellPrefab;
     [SerializeField] private GameObject dotPrefab;
+    [SerializeField] private LineManager lineManager;
 
     [Header("Game Settings")]
-    [SerializeField] private Color[] dotColors;
-    [SerializeField] private LineManager lineManager;
+    [SerializeField]
+    private Color[] dotColors = new Color[]
+    {
+    new Color(1f, 0f, 0f), // Красный
+    new Color(0f, 0f, 1f), // Синий
+    new Color(0f, 1f, 0f), // Зеленый
+    new Color(1f, 1f, 0f), // Желтый
+    new Color(1f, 0f, 1f), // Пурпурный
+    };
 
     private Cell[,] grid;
     private Dictionary<Color, List<Dot>> colorToDots = new Dictionary<Color, List<Dot>>();
     private Camera mainCamera;
     private Dot currentDot;
-
-    private void Awake()
-    {
-        mainCamera = Camera.main;
-        if (lineManager == null)
-        {
-            lineManager = GetComponent<LineManager>();
-        }
-    }
+    public int Width => width;
+    public int Height => height;
 
     private void Start()
     {
         GenerateGrid();
-        PlaceTestDots();
+        PlaceDotsForTesting(); // Временный метод для тестирования
     }
-
-    private void GenerateGrid()
+    private void Awake()
     {
-        grid = new Cell[width, height];
-        Transform gridHolder = new GameObject("Grid").transform;
-        gridHolder.SetParent(transform);
-
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                Vector3 position = new Vector3(x * cellSize, y * cellSize, 0);
-                GameObject cellObj = Instantiate(cellPrefab, position, Quaternion.identity, gridHolder);
-                cellObj.name = $"Cell_{x}_{y}";
-
-                grid[x, y] = cellObj.GetComponent<Cell>();
-            }
-        }
-
-        CenterGrid();
-    }
-
-    private void PlaceTestDots()
-    {
-        if (dotColors == null || dotColors.Length < 2)
-        {
-            Debug.LogError("Not enough colors defined!");
-            return;
-        }
-
-        // Тестовые пары точек
-        PlaceDotPair(new Vector2Int(0, 0), new Vector2Int(2, 2), dotColors[0]);
-        PlaceDotPair(new Vector2Int(1, 1), new Vector2Int(3, 3), dotColors[1]);
-    }
-
-    private void PlaceDotPair(Vector2Int pos1, Vector2Int pos2, Color color)
-    {
-        Debug.Log($"Placing dot pair of color {color} at positions {pos1} and {pos2}");
-
-        Dot dot1 = CreateDot(pos1, color);
-        Dot dot2 = CreateDot(pos2, color);
-
-        if (!colorToDots.ContainsKey(color))
-        {
-            colorToDots[color] = new List<Dot>();
-        }
-
-        colorToDots[color].Add(dot1);
-        colorToDots[color].Add(dot2);
-    }
-
-    private Dot CreateDot(Vector2Int gridPos, Color color)
-    {
-        // Преобразуем позицию сетки в мировые координаты
-        Vector3 worldPos = transform.position + new Vector3(gridPos.x * cellSize, gridPos.y * cellSize, -0.1f);
-
-        // Создаём точку как копию префаба
-        GameObject dotObj = Instantiate(dotPrefab, worldPos, Quaternion.identity, transform);
-        dotObj.name = $"Dot_{color}_{gridPos.x}_{gridPos.y}";
-
-        Dot dot = dotObj.GetComponent<Dot>();
-        dot.Initialize(color, gridPos);
-
-        if (grid[gridPos.x, gridPos.y] != null)
-        {
-            grid[gridPos.x, gridPos.y].SetOccupied(true);
-        }
-
-        Debug.Log($"Created dot at {worldPos} with color {color}");
-        return dot;
-    }
-
-    private void CenterGrid()
-    {
-        float offsetX = -(width * cellSize) / 2f + cellSize / 2f;
-        float offsetY = -(height * cellSize) / 2f + cellSize / 2f;
-        transform.position = new Vector3(offsetX, offsetY, 0);
+        mainCamera = Camera.main;
     }
 
     private void Update()
@@ -119,9 +45,54 @@ public class GridManager : MonoBehaviour
         HandleInput();
     }
 
+    public bool AreAllDotsConnected()
+    {
+        return FindObjectsOfType<Dot>().All(dot => dot.IsConnected());
+    }
+
+    public bool IsGridFull()
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (!grid[x, y].IsOccupied())
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    public Dot GetDotAtGridPosition(Vector2Int gridPos)
+    {
+        Collider2D[] colliders = Physics2D.OverlapPointAll(GridToWorldPosition(gridPos));
+        foreach (Collider2D collider in colliders)
+        {
+            Dot dot = collider.GetComponent<Dot>();
+            if (dot != null)
+                return dot;
+        }
+        return null;
+    }
+
+    public Vector3 GridToWorldPosition(Vector2Int gridPos)
+    {
+        return new Vector3(gridPos.x * cellSize, gridPos.y * cellSize, 0) + transform.position;
+    }
+
+    public Vector2Int WorldToGridPosition(Vector2 worldPos)
+    {
+        Vector2 localPos = worldPos - (Vector2)transform.position;
+        return new Vector2Int(
+            Mathf.RoundToInt(localPos.x / cellSize),
+            Mathf.RoundToInt(localPos.y / cellSize)
+        );
+    }
+
     private void HandleInput()
     {
         Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        Vector2Int gridPosition = WorldToGridPosition(mousePosition);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -129,12 +100,12 @@ public class GridManager : MonoBehaviour
             if (hitDot != null)
             {
                 currentDot = hitDot;
-                lineManager.StartLine(hitDot);
+                lineManager.StartLine(hitDot, gridPosition);
             }
         }
         else if (Input.GetMouseButton(0) && currentDot != null)
         {
-            lineManager.UpdateLine(mousePosition);
+            lineManager.UpdateLine(gridPosition);
         }
         else if (Input.GetMouseButtonUp(0) && currentDot != null)
         {
@@ -153,6 +124,83 @@ public class GridManager : MonoBehaviour
             if (dot != null)
                 return dot;
         }
+        return null;
+    }
+    private void GenerateGrid()
+    {
+        grid = new Cell[width, height];
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Vector3 position = new Vector3(x * cellSize, y * cellSize, 0);
+                GameObject cellObject = Instantiate(cellPrefab, position, Quaternion.identity);
+                cellObject.transform.parent = transform;
+                cellObject.name = $"Cell ({x}, {y})";
+
+                grid[x, y] = cellObject.GetComponent<Cell>();
+            }
+        }
+
+        CenterGrid();
+    }
+
+    private void PlaceDotsForTesting()
+    {
+        // Красная пара
+        PlaceDotPair(new Vector2Int(0, 4), new Vector2Int(4, 4), dotColors[0]);
+
+        // Синяя пара
+        PlaceDotPair(new Vector2Int(0, 3), new Vector2Int(4, 3), dotColors[1]);
+
+        // Желтая пара
+        PlaceDotPair(new Vector2Int(0, 2), new Vector2Int(3, 2), dotColors[2]);
+
+        // Зеленая пара
+        PlaceDotPair(new Vector2Int(0, 0), new Vector2Int(4, 0), dotColors[3]);
+
+        // Фиолетовая пара
+        PlaceDotPair(new Vector2Int(4, 2), new Vector2Int(0, 1), dotColors[4]);
+    }
+
+    private void PlaceDotPair(Vector2Int pos1, Vector2Int pos2, Color color)
+    {
+        // Создаем первую точку
+        Dot dot1 = CreateDot(pos1, color);
+        // Создаем вторую точку
+        Dot dot2 = CreateDot(pos2, color);
+
+        // Добавляем точки в словарь
+        if (!colorToDots.ContainsKey(color))
+        {
+            colorToDots[color] = new List<Dot>();
+        }
+        colorToDots[color].Add(dot1);
+        colorToDots[color].Add(dot2);
+    }
+
+    private Dot CreateDot(Vector2Int gridPos, Color color)
+    {
+        Vector3 worldPos = new Vector3(gridPos.x * cellSize, gridPos.y * cellSize, -0.1f) + transform.position;
+        GameObject dotObject = Instantiate(dotPrefab, worldPos, Quaternion.identity, transform);
+        Dot dot = dotObject.GetComponent<Dot>();
+        dot.Initialize(color, gridPos);
+        grid[gridPos.x, gridPos.y].SetOccupied(true);
+        return dot;
+    }
+
+    private void CenterGrid()
+    {
+        float offsetX = -(width * cellSize) / 2f + cellSize / 2f;
+        float offsetY = -(height * cellSize) / 2f + cellSize / 2f;
+        transform.position = new Vector3(offsetX, offsetY, 0);
+    }
+
+    public Cell GetCell(int x, int y)
+    {
+        if (x >= 0 && x < width && y >= 0 && y < height)
+            return grid[x, y];
         return null;
     }
 }
