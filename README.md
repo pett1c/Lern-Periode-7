@@ -24,28 +24,41 @@ Heute habe ich damit begonnen, die Sprites der Zellen zu ändern, damit sie norm
 
 
 ## 08.11
-- [ ] Als Spieler möchte ich, dass die Punkte angezeigt werden, damit ich sie sehen und später mit ihnen interagieren kann.
-- [ ] Als Spieler möchte ich in der Lage sein, Linien zwischen den Punkten zu ziehen, damit ich das Feld füllen und gewinnen kann.
-- [ ] Als Spieler möchte ich zwei gleichfarbige Punkte auf dem Raster haben, damit ich sie mit Linien verbinden kann.
-- [ ] Als Spieler möchte ich gewinnen können, damit ich gewinnen kann.
+- [x] Als Spieler möchte ich, dass die Punkte auf dem Bildschirm angezeigt werden, damit ich sie sehen und später mit ihnen interagieren kann. /
+Erläuterung: Lösen das Problem, dass die Punkte aus irgendeinem Grund nicht auf dem Bildschirm erscheinen.
+- [x] Als Spieler möchte ich Linien ziehen können, um das Raster zu füllen und zu gewinnen. /
+Erläuterung: Erstelle LineManager.cs und Line.cs, um Linien zu erstellen und zu verwalten.
+- [x] Als Spieler möchte ich, dass die Linie die gleiche Farbe hat wie der Punkt, an dem ich mit dem Zeichnen der Linie beginne, damit die Linien mit den Punkten übereinstimmen. /
+Erläuterung: Binden die Farbe jeder Linie an die Farbe jedes Punktpaares.
+- [x] Als Spieler möchte ich, dass sich die Linien ausschliesslich auf dem Gitter bewegen können, damit ich zwei Punkte verbinden kann. /
+Erläuterung: Ändere das Verhalten einer Linie, wenn ein Spieler sie von einem Startpunkt aus zieht (erstellt).
 
-✍️ Heute habe ich... (50-100 Wörter)
+Der heutige Tag war sehr produktiv. Zunächst beschloss ich, mich mit dem Problem zu befassen, dass ich keine Punkte auf dem Bildschirm anzeigen kann, und verbrachte viel Zeit damit, bis ich mit einem Freund telefonierte, der mir den Tipp gab, ändere einfach die Transparenz. Ich hatte völlig vergessen, die Transparenz einzustellen, und habe so viel Zeit damit verbracht, das Problem mit buchstäblich zwei Klicks zu lösen. Aber ich liess mich nicht entmutigen und arbeitete weiter daran, dass der Spieler in der Lage war, Linien zu erstellen, die farblich an den Startpunkt angepasst waren, und dass sich die Linien genau auf dem Raster bewegten.
 
 
 ## 15.11
-- [ ] 123
-- [ ] 123
-- [ ] 123
-- [ ] 123
+- [x] Als Spieler möchte ich, dass sich die Linien nicht kreuzen, damit ich das Raster füllen und gewinnen kann. /
+Erläuterung: Erstelle eine Linienkreuzungsprüfung.
+- [x] Als Spieler möchte ich, dass die Linien keine Felder durchqueren, auf denen sich eine Linie oder ein anderer Punkt als derjenige befindet, der mit meinem Startpunkt verbunden ist, damit ich die beiden Punkte verbinden kann. /
+Erläuterung: Erstelle eine Prüfung auf Schnittpunkte von Punkten, die nicht benötigt werden.
+- [x] Als Spieler möchte ich so viele Punkte auf dem Gitter haben, dass ich sie miteinander verbinden und das Feld füllen kann, um zu gewinnen. /
+Erläuterung: Punktepaare bilden
+- [x] Als Spieler möchte ich, dass sich die Punkte an Stellen befinden, an denen ich das Raster füllen kann, ohne die Linien zu überqueren, damit ich gewinnen kann. /
+Erläuterung: Schaffe eine logische Anordnung von Punktepaaren.
+- [x] Als Spieler möchte ich in der Lage sein zu gewinnen, und ich möchte auch benachrichtigt werden, wenn ich das Raster fülle, damit ich weiss, wann ich gewonnen habe. /
+Erläuterung: Erstellen ein Canvas mit Text und einem entsprechenden Skript (GameCompletionChecker.cs)
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute war auch ein recht produktiver Tag. Zunächst habe ich die Logik des Linienverhaltens auf dem Raster verfeinert (Prüfung auf Kreuzung mit einer anderen Linie und Prüfung auf Kreuzung mit einem unnötigen Punkt), dann habe ich genügend Punkte erstellt und sie so angeordnet, dass ich das Feld vollständig füllen konnte. Am Ende fügte ich eine Gewinnoption hinzu, und ich hatte die Kraft und Lust, dem Spieler eine Gewinnbenachrichtigung zu geben.
 
 
 ## 22.11
-- [ ] 123
-- [ ] 123
-- [ ] 123
-- [ ] 123
+- [ ] Als Spieler möchte ich die Möglichkeit haben, die letzte Aktion rückgängig zu machen (die Zeile zu löschen), um den Fehler zu beheben und das Spiel fortzusetzen. /
+Erläuterng: Schaffen die Möglichkeit, auf einen der verbundenen Punkte zu klicken, um alle Informationen über die zuvor erstellte Zeile zu löschen.
+- [ ] Als Spieler möchte ich sehen können, wie viele Züge ich gemacht habe und welches Mindestergebnis für eine „perfekte“ Lösung erforderlich ist, um ein besseres Ergebnis anzustreben. /
+Erläuterung: Erstellen ein System zum Zählen der Züge und zur Anzeige dieser Informationen auf dem Bildschirm
+- [ ] Als Spieler möchte ich ein Menü haben, in dem ich die mir zur Verfügung stehenden Stufen auswählen kann, so dass ich die Macht habe, zu wählen. /
+Erläuterung: Ein Menü erstellen; Mehrere Levels erstellen
+- [ ] Letzte Woche habe ich ein extra Arbeitspaket gemacht.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
