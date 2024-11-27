@@ -52,49 +52,65 @@ Heute war auch ein recht produktiver Tag. Zunächst habe ich die Logik des Linie
 
 
 ## 22.11
-- [ ] Als Spieler möchte ich die Möglichkeit haben, die letzte Aktion rückgängig zu machen (die Zeile zu löschen), um den Fehler zu beheben und das Spiel fortzusetzen. /
+- [x] Als Spieler möchte ich die Möglichkeit haben, die letzte Aktion rückgängig zu machen (die Zeile zu löschen), um den Fehler zu beheben und das Spiel fortzusetzen. /
 Erläuterng: Schaffen die Möglichkeit, auf einen der verbundenen Punkte zu klicken, um alle Informationen über die zuvor erstellte Zeile zu löschen.
-- [ ] Als Spieler möchte ich sehen können, wie viele Züge ich gemacht habe und welches Mindestergebnis für eine „perfekte“ Lösung erforderlich ist, um ein besseres Ergebnis anzustreben. /
+- [x] Als Spieler möchte ich sehen können, wie viele Züge ich gemacht habe, um ein besseres Ergebnis anzustreben. /
 Erläuterung: Erstellen ein System zum Zählen der Züge und zur Anzeige dieser Informationen auf dem Bildschirm
-- [ ] Als Spieler möchte ich ein Menü haben, in dem ich die mir zur Verfügung stehenden Stufen auswählen kann, so dass ich die Macht habe, zu wählen. /
+- [x] Als Spieler möchte ich ein Menü haben, in dem ich die mir zur Verfügung stehenden Stufen auswählen kann, so dass ich die Macht habe, zu wählen. /
 Erläuterung: Ein Menü erstellen; Mehrere Levels erstellen
-- [ ] Letzte Woche habe ich ein extra Arbeitspaket gemacht.
+- [x] Letzte Woche habe ich ein extra Arbeitspaket gemacht.
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute war ein recht produktiver Tag. Als erstes fügte ich die Möglichkeit hinzu, die Verbindung zwischen zwei Punkten abzubrechen, indem ich auf einen der verbundenen Punkte klickte. Als nächstes fügte ich die Verfolgung der Schritte des Spielers hinzu. Sobald ein Spieler zwei Punkte miteinander verbindet, zählt das Spiel den Schritt. Wenn überhaupt, hat das Abbrechen der Verbindung keinen Einfluss auf die Schrittzählung - der Spieler sollte sich um einen perfekten Pass bemühen, ohne Schritte abzubrechen. Als Nächstes habe ich ein paar neue Szenen hinzugefügt, darunter das Hauptmenü, das erste, zweite und dritte Level. Im Hauptmenü habe ich einen Text mit dem Namen des Spiels sowie drei Buttons erstellt, die den Spieler zum entsprechenden Level führen, wenn er sie anklickt. Um die Punkte auf jeder Ebene eindeutig zu positionieren, habe ich schliesslich die vordefinierte Position in GridManager.cs abgeschafft und einfach ein ScriptableObject erstellt, mit dem man die Grösse des Rasters, die Anzahl der Punkte, ihre Farben und ihre Position bequem konfigurieren kann. Dementsprechend habe ich drei eindeutige Datendateien für jede der drei Ebenen erstellt. Und natürlich eine weitere Datendatei zum Testen und Erstellen neuer Ebenen. Das war das Ende meiner Arbeit.
 
 
 ## 29.11
-- [ ] 123
-- [ ] 123
-- [ ] 123
-- [ ] 123
+- [ ] Als Spieler möchte ich zum Hauptmenü zurückkehren können, wenn ich gewonnen habe, damit ich ein anderes Level wählen oder das Spiel beenden kann.
+Erläuterng: Fügen zusammen mit der Siegmeldung einen Button hinzu, um zum MainMenu-Scene zu gelangen.
+- [ ] Als Spieler möchte ich zum nächsten Level gehen können, wenn ich gewinne, um weiterzuspielen.
+Erläuterng: Fügen zusammen mit der Siegesmeldung einen Button hinzu, mit der zum nächsten Level wechseln können.
+- [ ] Als Spieler möchte ich in der Lage sein, nach und nach neue Level freizuschalten, um Abwechslung zu haben.
+Erläuterng: Machen es so, dass alle Levels ausser dem ersten gesperrt sind. Nach dem Bestehen eines verfügbaren Levels wird das nächste Level freigeschaltet.
+- [ ] Als Spieler möchte ich, dass das Spiel mehr Levels hat, damit ich Abwechslung habe.
+Erläuterng: Erstelle und füge mehr Levels hinzu.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
 
 ## 06.12
+- [ ] Als Spieler möchte ich, dass das Spiel schwieriger wird, damit ich meinen Fortschritt im Spiel spüren kann.
+Erläuterng: Erstelle Level mit steigendem Schwierigkeitsgrad durch die Levelstruktur selbst oder die Grösse des Rasters.
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 - [ ] 123
-- [ ] 123
+Erläuterng: 
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
 
 ## 13.12
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
 
 ## 20.12
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 - [ ] 123
+Erläuterng: 
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
