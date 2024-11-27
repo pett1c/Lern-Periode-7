@@ -16,12 +16,15 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private Color[] dotColors = new Color[]
     {
-    new Color(1f, 0f, 0f), // Красный
-    new Color(0f, 0f, 1f), // Синий
-    new Color(0f, 1f, 0f), // Зеленый
-    new Color(1f, 1f, 0f), // Желтый
-    new Color(1f, 0f, 1f), // Пурпурный
+    new Color(1f, 0f, 0f), // Red
+    new Color(0f, 0f, 1f), // Lightblue
+    new Color(0f, 1f, 0f), // Green
+    new Color(1f, 1f, 0f), // Yellow
+    new Color(1f, 0f, 1f), // Purple
     };
+
+    [Header("Level")]
+    [SerializeField] private LevelData levelData;
 
     private Cell[,] grid;
     private Dictionary<Color, List<Dot>> colorToDots = new Dictionary<Color, List<Dot>>();
@@ -32,8 +35,14 @@ public class GridManager : MonoBehaviour
 
     private void Start()
     {
+        if (levelData != null)
+        {
+            width = levelData.gridWidth;
+            height = levelData.gridHeight;
+        }
+
         GenerateGrid();
-        PlaceDotsForTesting(); // Временный метод для тестирования
+        PlaceLevelDots();
     }
     private void Awake()
     {
@@ -145,33 +154,22 @@ public class GridManager : MonoBehaviour
 
         CenterGrid();
     }
-
-    private void PlaceDotsForTesting()
+    private void PlaceLevelDots()
     {
-        // Красная пара
-        PlaceDotPair(new Vector2Int(0, 4), new Vector2Int(4, 4), dotColors[0]);
+        if (levelData == null) return;
 
-        // Синяя пара
-        PlaceDotPair(new Vector2Int(0, 3), new Vector2Int(4, 3), dotColors[1]);
-
-        // Желтая пара
-        PlaceDotPair(new Vector2Int(0, 2), new Vector2Int(3, 2), dotColors[2]);
-
-        // Зеленая пара
-        PlaceDotPair(new Vector2Int(0, 0), new Vector2Int(4, 0), dotColors[3]);
-
-        // Фиолетовая пара
-        PlaceDotPair(new Vector2Int(4, 2), new Vector2Int(0, 1), dotColors[4]);
+        foreach (var dotPair in levelData.dotPairs)
+        {
+            Color dotColor = dotColors[dotPair.colorIndex];
+            PlaceDotPair(dotPair.dot1Position, dotPair.dot2Position, dotColor);
+        }
     }
-
     private void PlaceDotPair(Vector2Int pos1, Vector2Int pos2, Color color)
     {
-        // Создаем первую точку
         Dot dot1 = CreateDot(pos1, color);
-        // Создаем вторую точку
         Dot dot2 = CreateDot(pos2, color);
 
-        // Добавляем точки в словарь
+        // Adding dots to the dictionary
         if (!colorToDots.ContainsKey(color))
         {
             colorToDots[color] = new List<Dot>();

@@ -14,6 +14,8 @@ public class LineManager : MonoBehaviour
     private Dictionary<Color, (Dot, Dot)> connectedDots = new Dictionary<Color, (Dot, Dot)>();
     private Dictionary<Color, List<Vector2Int>> colorToPaths = new Dictionary<Color, List<Vector2Int>>();
     public event System.Action OnLineCompleted;
+    private int moveCount = 0;
+    public int MoveCount => moveCount;
 
     private void Start()
     {
@@ -23,7 +25,7 @@ public class LineManager : MonoBehaviour
 
     public void StartLine(Dot dot, Vector2Int gridPosition)
     {
-        // Проверяем, является ли точка уже соединенной
+        // Check if the point is already connected
         if (dot.IsConnected())
         {
             RemoveLine(dot.GetDotColor());
@@ -35,13 +37,13 @@ public class LineManager : MonoBehaviour
         linePath.Clear();
         linePath.Add(gridPosition);
 
-        // Если уже существует линия этого цвета, удаляем её
+        // If a line of this color already exists, delete it
         if (colorToLine.ContainsKey(dot.GetDotColor()))
         {
             RemoveLine(dot.GetDotColor());
         }
 
-        // Создаем новую линию
+        // Create a new line
         GameObject lineObj = Instantiate(linePrefab, transform);
         currentLine = lineObj.GetComponent<Line>();
         currentLine.SetColor(dot.GetDotColor());
@@ -53,11 +55,11 @@ public class LineManager : MonoBehaviour
     {
         if (colorToLine.ContainsKey(color))
         {
-            // Удаляем объект линии
+            // Deleting a line object
             Destroy(colorToLine[color].gameObject);
             colorToLine.Remove(color);
 
-            // Освобождаем клетки на пути линии
+            // Releasing cells in the path of the line
             if (connectedDots.ContainsKey(color))
             {
                 var (dot1, dot2) = connectedDots[color];
@@ -66,7 +68,7 @@ public class LineManager : MonoBehaviour
                 connectedDots.Remove(color);
             }
 
-            // Освобождаем все клетки на сохраненном пути
+            // Releasing all cells on the stored pathway
             if (colorToPaths.ContainsKey(color))
             {
                 foreach (var pos in colorToPaths[color])
@@ -74,11 +76,11 @@ public class LineManager : MonoBehaviour
                     var cell = gridManager.GetCell(pos.x, pos.y);
                     if (cell != null)
                     {
-                        // Проверяем, нет ли на клетке точки или другой линии
+                        // Check if there is a dot or other line on the cell
                         var dotAtCell = gridManager.GetDotAtGridPosition(pos);
                         if (dotAtCell == null)
                         {
-                            // Проверяем, не проходит ли через эту клетку другая линия
+                            // Check if there is another line through this cell
                             bool isUsedByOtherLine = false;
                             foreach (var path in colorToPaths.Where(kvp => kvp.Key != color))
                             {
@@ -104,7 +106,7 @@ public class LineManager : MonoBehaviour
     {
         if (currentLine == null || activeDot == null) return;
 
-        // Проверка границ поля
+        // Checking field boundaries
         if (newGridPosition.x < 0 || newGridPosition.x >= gridManager.Width ||
             newGridPosition.y < 0 || newGridPosition.y >= gridManager.Height)
             return;
@@ -112,7 +114,7 @@ public class LineManager : MonoBehaviour
         Vector2Int delta = newGridPosition - lastGridPosition;
         if (Mathf.Abs(delta.x) + Mathf.Abs(delta.y) != 1) return;
 
-        // Проверка на движение назад
+        // Reverse movement check
         if (linePath.Count > 1 && newGridPosition == linePath[linePath.Count - 2])
         {
             linePath.RemoveAt(linePath.Count - 1);
@@ -121,21 +123,21 @@ public class LineManager : MonoBehaviour
             return;
         }
 
-        // Проверка на начальную точку
+        // Checking for the starting point
         if (newGridPosition == activeDot.GetGridPosition())
             return;
 
-        // Проверка на пересечение с текущей линией
+        // Checking for intersection with the current line
         if (linePath.Contains(newGridPosition))
             return;
 
-        // Проверка на столкновение с точкой и занятость клетки
+        // Checking for point collision and cell occupancy
         Dot dotAtPosition = gridManager.GetDotAtGridPosition(newGridPosition);
         Cell cell = gridManager.GetCell(newGridPosition.x, newGridPosition.y);
 
         if (cell != null && cell.IsOccupied())
         {
-            // Проверяем, не точка ли это такого же цвета
+            // Checking to see if it's a dot of the same color
             if (dotAtPosition == null || dotAtPosition.GetDotColor() != activeDot.GetDotColor())
                 return;
         }
@@ -143,7 +145,7 @@ public class LineManager : MonoBehaviour
         if (dotAtPosition != null)
         {
             if (dotAtPosition.GetDotColor() != activeDot.GetDotColor())
-                return; // Блокируем движение если точка другого цвета
+                return; // Block movement if the point is of a different color
 
             if (dotAtPosition.GetDotColor() == activeDot.GetDotColor() && dotAtPosition != activeDot)
             {
@@ -164,16 +166,17 @@ public class LineManager : MonoBehaviour
         {
             if (endDot != null && endDot.GetDotColor() == activeDot.GetDotColor() && endDot != activeDot)
             {
+                moveCount++;
                 activeDot.SetConnected(true);
                 endDot.SetConnected(true);
 
-                // Сохраняем пару соединенных точек
+                // Save a pair of connected points
                 connectedDots[activeDot.GetDotColor()] = (activeDot, endDot);
 
-                // Сохраняем путь линии
+                // Save the line path
                 colorToPaths[activeDot.GetDotColor()] = new List<Vector2Int>(linePath);
 
-                // Отмечаем все клетки по пути как занятые
+                // Mark all squares along the way as occupied
                 foreach (var pos in linePath)
                 {
                     gridManager.GetCell(pos.x, pos.y).SetOccupied(true);

@@ -4,7 +4,7 @@ public class GameCompletionChecker : MonoBehaviour
 {
     [SerializeField] private GridManager gridManager;
     [SerializeField] private LineManager lineManager;
-    [SerializeField] private GameObject victoryPanel; // Панель с сообщением о победе
+    [SerializeField] private GameObject victoryPanel; // Victory message panel
 
     private void Start()
     {
@@ -34,7 +34,6 @@ public class GameCompletionChecker : MonoBehaviour
         if (victoryPanel != null)
         {
             victoryPanel.SetActive(true);
-            // Можно добавить звуковой эффект, анимацию или другие эффекты победы
         }
         Debug.Log("Уровень пройден!");
     }
