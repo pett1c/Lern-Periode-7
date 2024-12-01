@@ -79,12 +79,12 @@ Der heutige Tag war äuыыerst interessant und regte zum Nachdenken an. Erstens
 ## 06.12
 - [ ] Als Spieler möchte ich, dass das Spiel schwieriger wird, damit ich meinen Fortschritt im Spiel spüren kann.
 Erläuterng: Erstelle Level mit steigendem Schwierigkeitsgrad durch die Levelstruktur selbst oder die Grösse des Rasters.
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
+- [ ] Als Spieler möchte ich in der Lage sein, ein Level jederzeit neu zu starten, um die Lösung von Anfang an zu beginnen.
+Erläuterng: Erstellen Sie eine Schaltfläche, um sie an ein Skript zu binden, damit das Level neu startet.
+- [ ] Als Spieler möchte ich wissen, wie perfekt ich den Level abgeschlossen habe, damit ich mein Ego genieыыen kann.
+Erläuterng: Erstellen Sie eine Skala für „perfektes“ Bestehen des Levels, und verfolgen Sie anhand von Zügen, wie perfekt das Level bestanden wurde.
+- [ ] Als Spieler möchte ich in der Lage sein, einen Hinweis zu verwenden, damit ich leichter durch den Level komme.
+Erläuterng: Erstellen Sie eine Button, die den Durchgang eines zufälligen Punktepaares anzeigt.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
