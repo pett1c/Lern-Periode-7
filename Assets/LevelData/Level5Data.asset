@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa49647fe14037c4783489944f942304, type: 3}
+  m_Name: Level5Data
+  m_EditorClassIdentifier: 
+  gridWidth: 5
+  gridHeight: 5
+  dotPairs:
+  - dot1Position: {x: 4, y: 1}
+    dot2Position: {x: 3, y: 0}
+    colorIndex: 0
+  - dot1Position: {x: 0, y: 0}
+    dot2Position: {x: 4, y: 2}
+    colorIndex: 1
+  - dot1Position: {x: 1, y: 2}
+    dot2Position: {x: 4, y: 3}
+    colorIndex: 2
+  - dot1Position: {x: 1, y: 3}
+    dot2Position: {x: 4, y: 4}
+    colorIndex: 3
+  - dot1Position: {x: 0, y: 4}
+    dot2Position: {x: 1, y: 1}
+    colorIndex: 4
