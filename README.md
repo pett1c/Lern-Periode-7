@@ -64,16 +64,16 @@ Heute war ein recht produktiver Tag. Als erstes fügte ich die Möglichkeit hinz
 
 
 ## 29.11
-- [ ] Als Spieler möchte ich zum Hauptmenü zurückkehren können, wenn ich gewonnen habe, damit ich ein anderes Level wählen oder das Spiel beenden kann.
+- [x] Als Spieler möchte ich zum Hauptmenü zurückkehren können, wenn ich gewonnen habe, damit ich ein anderes Level wählen oder das Spiel beenden kann.
 Erläuterng: Fügen zusammen mit der Siegmeldung einen Button hinzu, um zum MainMenu-Scene zu gelangen.
-- [ ] Als Spieler möchte ich zum nächsten Level gehen können, wenn ich gewinne, um weiterzuspielen.
+- [x] Als Spieler möchte ich zum nächsten Level gehen können, wenn ich gewinne, um weiterzuspielen.
 Erläuterng: Fügen zusammen mit der Siegesmeldung einen Button hinzu, mit der zum nächsten Level wechseln können.
-- [ ] Als Spieler möchte ich in der Lage sein, nach und nach neue Level freizuschalten, um Abwechslung zu haben.
+- [x] Als Spieler möchte ich in der Lage sein, nach und nach neue Level freizuschalten, um Abwechslung zu haben.
 Erläuterng: Machen es so, dass alle Levels ausser dem ersten gesperrt sind. Nach dem Bestehen eines verfügbaren Levels wird das nächste Level freigeschaltet.
-- [ ] Als Spieler möchte ich, dass das Spiel mehr Levels hat, damit ich Abwechslung habe.
-Erläuterng: Erstelle und füge mehr Levels hinzu.
+- [x] Als Spieler möchte ich, dass das Spiel Geheimnisse von den Entwicklern hat, damit es mehr Originalität im Spiel gibt.
+Erläuterng: Füge ein Geheimnis des Entwicklers hinzu, einen interessanten Trick.
 
-✍️ Heute habe ich... (50-100 Wörter)
+Der heutige Tag war äuыыerst interessant und regte zum Nachdenken an. Erstens habe ich dem VictoryPanel zwei Button hinzugefügt, damit der Spieler nach dem Bestehen des Levels sowohl zum Menü zurückkehren als auch zum nächsten Level gehen kann. Ich musste etwas Zeit aufwenden, um die richtigen Unicode-Symbole zu finden, aber insgesamt habe ich es schnell geschafft. Als nächstes kam die Hauptarbeit: das Hinzufügen neuer Levels. Zunächst einmal bin ich die Tatsache losgeworden, dass ich neue Levels in den Code schreiben muss - ich habe einfach eine Dropdown-Liste im Inspektor über das Skript MainMenu.cs erstellt, über die ich leicht neue Levels hinzufügen kann. Um viele neue Levels zu erstellen, habe ich sogar ein Textdokument erstellt, in dem ich die Koordinaten der einzelnen Punkte notiere, die ich zu diesem Zweck auf einer speziellen Beispielbühne platziert habe. Dann habe ich neue LevelData-Dateien erstellt und ihnen die Koordinaten aller neuen Levels hinzugefügt, die ich aufgeschrieben habe. Dann habe ich neue Szenen für jede der Ebenen erstellt und die richtige LevelData-Datei in jeder von ihnen im Inspektor ersetzt. Schliesslich testete ich jede Level und stellte fest, dass ich mich in zwei ganzen Levels geirrt hatte. Ich musste neue Levels erstellen. Ganz zum Schluss kam ich in das Geheimnis des Entwicklers, das da lautet: ... und Sie werden es selbst herausfinden, ich werde es Ihnen nicht verraten. Es war effizient und hat Spass gemacht, vor allem beim Erstellen des Geheimnisses.
 
 
 ## 06.12
