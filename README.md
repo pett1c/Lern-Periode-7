@@ -77,32 +77,36 @@ Der heutige Tag war äuыыerst interessant und regte zum Nachdenken an. Erstens
 
 
 ## 06.12
-- [ ] Als Spieler möchte ich, dass das Spiel schwieriger wird, damit ich meinen Fortschritt im Spiel spüren kann.
+- [x] Als Spieler möchte ich, dass das Spiel schwieriger wird, damit ich meinen Fortschritt im Spiel spüren kann.
 Erläuterng: Erstelle Level mit steigendem Schwierigkeitsgrad durch die Levelstruktur selbst oder die Grösse des Rasters.
-- [ ] Als Spieler möchte ich in der Lage sein, ein Level jederzeit neu zu starten, um die Lösung von Anfang an zu beginnen.
+- [x] Als Spieler möchte ich in der Lage sein, ein Level jederzeit neu zu starten, um die Lösung von Anfang an zu beginnen.
 Erläuterng: Erstellen Sie eine Schaltfläche, um sie an ein Skript zu binden, damit das Level neu startet.
-- [ ] Als Spieler möchte ich wissen, wie perfekt ich den Level abgeschlossen habe, damit ich mein Ego genieыыen kann.
+- [x] Als Spieler möchte ich wissen, wie perfekt ich den Level abgeschlossen habe, damit ich mein Ego genieыыen kann.
 Erläuterng: Erstellen Sie eine Skala für „perfektes“ Bestehen des Levels, und verfolgen Sie anhand von Zügen, wie perfekt das Level bestanden wurde.
-- [ ] Als Spieler möchte ich in der Lage sein, einen Hinweis zu verwenden, damit ich leichter durch den Level komme.
+- [x] Als Spieler möchte ich in der Lage sein, einen Hinweis zu verwenden, damit ich leichter durch den Level komme.
 Erläuterng: Erstellen Sie eine Button, die den Durchgang eines zufälligen Punktepaares anzeigt.
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute war ein äusserst produktiver Tag. Als erstes habe ich versucht, die Qualität der Grafiken zu verbessern, aber nach ein paar Fehlversuchen habe ich das auf bessere Zeiten verschoben. Als nächstes habe ich mich an die Implementierung der Neustart-Button und des Hintbutton gemacht. Der Neustart-Button war einfach, aber die Hintbutton.... Ich implementierte eine zusätzliche Buttons - die Entwickler-Button (EditHint). Sie ist zunächst nicht sichtbar, um sie zu sehen, muss man eine bestimmte Taste auf der Tastatur drücken. Diese Button ermöglicht es mir, Pfade zwischen Punkten zu erstellen und sie für die Hinweis-Button zu speichern. Das heisst, später werden diese Werte gespeichert, und wenn man die Hinweis-Button drückt, sieht der Spieler die Routen, die ich mit der Entwickler-Button erstellt habe. Ganz zum Schluss habe ich mich mit den Prozenten der Spielidee beschäftigt. Es war nicht schwierig. Das schwierigste, wenn auch nicht schwierig - und mühsamste war das Kopieren und Einfügen aller Neuerungen in jeder Szene (= jedem Level)
 
 
 ## 13.12
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
+- [ ] Als Spieler möchte ich noch mehr Levels, damit ich externe Abwechslung habe.
+Erläuterng: 10 weitere neue Levels hinzufügen
+- [ ] Als Spieler möchte ich, dass meine 100%igen Levelabschlüsse irgendwie gespeichert werden, damit ich mir meine perfekten Punktzahlen ansehen kann
+Erläuterng: Eine Art Symbol zu den Level-Buttons im Menü hinzufügen, damit es anzeigt, dass der Level zu 100% abgeschlossen wurde
+- [ ] Als Spieler möchte ich, dass neue Levels ein grösseres Raster und neue Farben für Paare haben, damit die Levels intern abwechslungsreich sind.
+Erläuterng: Neue Level sollten ein grösseres Raster und neue Farben haben, aus denen man wählen kann.
+- [ ] Als Spieler möchte ich in der Lage sein, Level nur als Komplettlösung freizuschalten, nicht alle auf einmal, damit ich das „Komplettlösungsspiel“ und nicht das „freie“ Spiel erleben kann.
+Erläuterng: Sperren alle Level ausser dem ersten, und schalten nach jedem Level ein neues frei, und speichern natürlich alles.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
 
 ## 20.12
+Ideen für die Pakete:
+- Erweiterung der Entwickler Buttons durch einen Button im Menü, der alle Level freischaltet
+- ...
+
 - [ ] 123
 Erläuterng: 
 - [ ] 123
