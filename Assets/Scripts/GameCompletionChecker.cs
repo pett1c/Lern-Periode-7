@@ -12,7 +12,15 @@ public class GameCompletionChecker : MonoBehaviour
             lineManager.OnLineCompleted += CheckGameCompletion;
 
         if (victoryPanel != null)
+        {
             victoryPanel.SetActive(false);
+            // Убеждаемся, что VictoryPanelManager получит актуальные данные
+            var victoryManager = victoryPanel.GetComponent<VictoryPanelManager>();
+            if (victoryManager != null)
+            {
+                victoryManager.Initialize(gridManager, lineManager);
+            }
+        }
     }
 
     private void OnDestroy()
@@ -34,6 +42,12 @@ public class GameCompletionChecker : MonoBehaviour
         if (victoryPanel != null)
         {
             victoryPanel.SetActive(true);
+            // Обновляем данные в VictoryPanelManager при показе панели
+            var victoryManager = victoryPanel.GetComponent<VictoryPanelManager>();
+            if (victoryManager != null)
+            {
+                victoryManager.UpdatePerfectionScore();
+            }
         }
     }
 }

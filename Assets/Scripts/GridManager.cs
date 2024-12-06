@@ -124,7 +124,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    private Dot GetDotAtPosition(Vector2 position)
+    public Dot GetDotAtPosition(Vector2 position)
     {
         Collider2D[] colliders = Physics2D.OverlapPointAll(position);
         foreach (Collider2D collider in colliders)
@@ -200,5 +200,16 @@ public class GridManager : MonoBehaviour
         if (x >= 0 && x < width && y >= 0 && y < height)
             return grid[x, y];
         return null;
+    }
+
+    public int GetDotPairsCount()
+    {
+        if (colorToDots == null || colorToDots.Count == 0)
+        {
+            Debug.LogWarning("No dot pairs found in the grid!");
+            return 0;
+        }
+
+        return colorToDots.Count;
     }
 }
