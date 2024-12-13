@@ -90,31 +90,25 @@ Heute war ein äusserst produktiver Tag. Als erstes habe ich versucht, die Quali
 
 
 ## 13.12
-- [ ] Als Spieler möchte ich noch mehr Levels, damit ich externe Abwechslung habe.
+- [x] Als Spieler möchte ich noch mehr Levels, damit ich externe Abwechslung habe.
 Erläuterng: 10 weitere neue Levels hinzufügen
 - [ ] Als Spieler möchte ich, dass meine 100%igen Levelabschlüsse irgendwie gespeichert werden, damit ich mir meine perfekten Punktzahlen ansehen kann
 Erläuterng: Eine Art Symbol zu den Level-Buttons im Menü hinzufügen, damit es anzeigt, dass der Level zu 100% abgeschlossen wurde
-- [ ] Als Spieler möchte ich, dass neue Levels ein grösseres Raster und neue Farben für Paare haben, damit die Levels intern abwechslungsreich sind.
+- [x] Als Spieler möchte ich, dass neue Levels ein grösseres Raster und neue Farben für Paare haben, damit die Levels intern abwechslungsreich sind.
 Erläuterng: Neue Level sollten ein grösseres Raster und neue Farben haben, aus denen man wählen kann.
-- [ ] Als Spieler möchte ich in der Lage sein, Level nur als Komplettlösung freizuschalten, nicht alle auf einmal, damit ich das „Komplettlösungsspiel“ und nicht das „freie“ Spiel erleben kann.
-Erläuterng: Sperren alle Level ausser dem ersten, und schalten nach jedem Level ein neues frei, und speichern natürlich alles.
+- [ ] Als Spieler möchte ich jederzeit das Hauptmenü aufrufen können, auch wenn ich mich im Spiel befinde, damit ich jederzeit die Stufe wechseln kann, z. B.
+Erläuterng: Erstellen eine Button „MainMenu“, die den Spieler zur MainMenu-Stufe bringt.
 
-✍️ Heute habe ich... (50-100 Wörter)
-
+Heute war es eine sehr mühsame und eintönige Arbeit: Ich habe neue Levels hinzugefügt. Von Anfang bis Ende habe ich das ausschliesslich gemacht, und ich bin noch nicht ganz fertig. Das Hauptproblem ist, dass ich ständig einige Parameter in jeder der Szenen ändern muss, z. B. muss ich ständig 5 neue Farben zu jeder der Szenen hinzufügen, und bei einem grossen Raster überlappen der Text und die Buttons das Raster, also musste ich auch das ändern. Kurz gesagt, am Ende habe ich es geschafft, nur 18 und 19 Level sind noch nicht spielbar. Ausserdem muss ich noch eine Button für jedes Level im Hauptmenü hinzufügen.
 
 ## 20.12
-Ideen für die Pakete:
-- Erweiterung der Entwickler Buttons durch einen Button im Menü, der alle Level freischaltet
-- ...
 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
-- [ ] 123
-Erläuterng: 
+- [ ] Als Spieler möchte ich, dass das Spiel ordnungsgemäss läuft und keine unnötigen Werte enthält, damit das Spiel das System weniger belastet.
+Erläuterng: Behebung von Fehlern und Entfernung von unnötigem Zeug
+- [ ] Als Spieler möchte ich, dass meine 100%igen Levelabschlüsse irgendwie gespeichert werden, damit ich mir meine perfekten Punktzahlen ansehen kann
+Erläuterng: Eine Art Symbol zu den Level-Buttons im Menü hinzufügen, damit es anzeigt, dass der Level zu 100% abgeschlossen wurde
+- [ ] Als Spieler möchte ich jederzeit das Hauptmenü aufrufen können, auch wenn ich mich im Spiel befinde, damit ich jederzeit die Stufe wechseln kann, z. B.
+Erläuterng: Erstellen eine Button „MainMenu“, die den Spieler zur MainMenu-Stufe bringt.
 
 ✍️ Heute habe ich... (50-100 Wörter)
 
