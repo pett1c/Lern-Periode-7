@@ -12,9 +12,7 @@ In the next version:
 - Optimization
 - And so on...
 
-![изображение](https://github.com/user-attachments/assets/3a816282-398d-4107-8b19-2e9efd1fd39b)
 ![flewe](https://github.com/user-attachments/assets/3c7c0121-b12a-4f61-9009-9da11c91c8d4)
-
 
 # Grob-Planung
 Was die Noten angeht, ist es nicht sehr gut, aber das ist okay für mich, denn es ist ja erst der Anfang des Jahres. Von den Modulen her ist alles gut und ich mag alles, es gibt nichts, was besonders langweilig oder uninteressant ist. Für diese LP habe ich mir schon vor den Herbstferien etwas einfallen lassen. Ich möchte ein Flow Free Spiel auf der Basis von Unity2D neu erstellen.
