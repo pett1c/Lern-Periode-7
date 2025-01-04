@@ -1,5 +1,19 @@
 # Lern-Periode 7
-## 25.10 bis 20.12
+## 25.10.2024 bis 20.12.2024
+
+# fertiges Projekt
+## flewe v1.0
+The first full version of the attempt to remake the game **flow.io** in my own way. Contains all the basic mechanics of the original game, 20 unique levels with two hints in each, percentages of perfection of each passage of the level and the display of the ideal passage of the level in the main menu.
+
+In the next version:
+- Improved graphics
+- More new levels
+- More mechanics
+- Optimization
+- And so on...
+
+![изображение](https://github.com/user-attachments/assets/3a816282-398d-4107-8b19-2e9efd1fd39b)
+![flewe](https://github.com/user-attachments/assets/3c7c0121-b12a-4f61-9009-9da11c91c8d4)
 
 
 # Grob-Planung
