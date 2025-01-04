@@ -99,18 +99,25 @@ Erläuterng: Neue Level sollten ein grösseres Raster und neue Farben haben, aus
 - [ ] Als Spieler möchte ich jederzeit das Hauptmenü aufrufen können, auch wenn ich mich im Spiel befinde, damit ich jederzeit die Stufe wechseln kann, z. B.
 Erläuterng: Erstellen eine Button „MainMenu“, die den Spieler zur MainMenu-Stufe bringt.
 
-Heute war es eine sehr mühsame und eintönige Arbeit: Ich habe neue Levels hinzugefügt. Von Anfang bis Ende habe ich das ausschliesslich gemacht, und ich bin noch nicht ganz fertig. Das Hauptproblem ist, dass ich ständig einige Parameter in jeder der Szenen ändern muss, z. B. muss ich ständig 5 neue Farben zu jeder der Szenen hinzufügen, und bei einem grossen Raster überlappen der Text und die Buttons das Raster, also musste ich auch das ändern. Kurz gesagt, am Ende habe ich es geschafft, nur 18 und 19 Level sind noch nicht spielbar. Ausserdem muss ich noch eine Button für jedes Level im Hauptmenü hinzufügen.
+Heute war es eine sehr mühsame und eintönige Arbeit: Ich habe neue Levels hinzugefügt. Von Anfang bis Ende habe ich das ausschliesslich gemacht, und ich bin noch nicht ganz fertig. Das Hauptproblem ist, dass ich ständig einige Parameter in jeder der Szenen ändern muss, z. B. muss ich ständig 5 neue Farben zu jeder der Szenen hinzufügen, und bei einem grossen Raster überlappen der Text und die Buttons das Raster, also musste ich auch das ändern. Kurz gesagt, am Ende habe ich es geschafft, nur 18 und 19 Level sind noch nicht spielbar. Ausserdem muss ich noch eine Button für jedes Level im Hauptmenü hi nzufügen.
 
 ## 20.12
 
-- [ ] Als Spieler möchte ich, dass das Spiel ordnungsgemäss läuft und keine unnötigen Werte enthält, damit das Spiel das System weniger belastet.
+- [x] Als Spieler möchte ich, dass das Spiel ordnungsgemäss läuft und keine unnötigen Werte enthält, damit das Spiel das System weniger belastet.
 Erläuterng: Behebung von Fehlern und Entfernung von unnötigem Zeug
-- [ ] Als Spieler möchte ich, dass meine 100%igen Levelabschlüsse irgendwie gespeichert werden, damit ich mir meine perfekten Punktzahlen ansehen kann
+- [x] Als Spieler möchte ich, dass meine 100%igen Levelabschlüsse irgendwie gespeichert werden, damit ich mir meine perfekten Punktzahlen ansehen kann
 Erläuterng: Eine Art Symbol zu den Level-Buttons im Menü hinzufügen, damit es anzeigt, dass der Level zu 100% abgeschlossen wurde
-- [ ] Als Spieler möchte ich jederzeit das Hauptmenü aufrufen können, auch wenn ich mich im Spiel befinde, damit ich jederzeit die Stufe wechseln kann, z. B.
+- [x] Als Spieler möchte ich jederzeit das Hauptmenü aufrufen können, auch wenn ich mich im Spiel befinde, damit ich jederzeit die Stufe wechseln kann, z. B.
 Erläuterng: Erstellen eine Button „MainMenu“, die den Spieler zur MainMenu-Stufe bringt.
 
-✍️ Heute habe ich... (50-100 Wörter)
+Heute war ein recht produktiver Tag. Zuerst beendete ich die Arbeit an den Levels: Ich habe die Levels 18 und 19 repariert und die Position aller Buttons auf der Hauptmenü-Bühne geändert. Als nächstes habe ich mich um die Button für die Rückkehr zum Hauptmenü gekümmert. Das war ganz einfach, ich kopierte einfach die vorhandene Button im VictoryPanel und fügte sie in jeder Szene jedes Levels ein. Fast zuletzt fügte ich jedoch die Möglichkeit hinzu, die 100%ige Fertigstellung eines jeden Levels zu speichern. Zuerst wollte ich eine Vorabversion der Level-Button selbst erstellen, um es bequemer zu machen, aber dann wurde mir klar, dass ich sie auf dem Canvas in der MainMenu-Szene neu anordnen müsste, also musste ich manuell ein perfektes Pass-Icon für jede Button festlegen. Und zu guter Letzt habe ich einfach den Code aufgeräumt, unnötige Dinge entfernt, Kommentare zu besonders komplizierten und langen Dateien hinzugefügt und im Allgemeinen die erste fertige Version des Spiels fertiggestellt.
 
 
 # Reflexion
+Dieses Projekt hat sich zu einer Art... ein Ausweg, wissen Sie? Ich habe eines meiner Lieblingsspiele auf meinem Handy als Grundlage genommen und mich entschlossen, es selbst zu implementieren. Nun, und im Allgemeinen denke ich, dass ich das technisch gut hinbekommen habe. Ich denke, ich werde dieses Projekt weiter entwickeln, aber erst nächstes Jahr (2025).
+
+Der Entwicklungsweg selbst war ziemlich kompliziert. Ich musste im Nachhinein vieles optimieren und neu schreiben, und selbst jetzt kann ich nicht sagen, dass das Spiel und sein Code optimiert und perfekt genug sind. Aber es ist äusserst interessant, sich mit dem Prozess zu beschäftigen, wie das Spiel ursprünglich funktioniert. Dank dieses Projekts habe ich gelernt, tief in den Code eines jeden Projekts hineinzuschauen. Wie genau es funktioniert, warum es so funktioniert, wie alle Elemente miteinander verbunden sind, und so weiter und so fort. Es hat mir wirklich Spass gemacht, zu sehen, wie sich das Spiel von einer Art Spiel zu einem vollwertigen Spiel entwickelt hat, bei dem man einfach in jedes Level einsteigen und es abschliessen kann, und bei dem man seine Erfolgsquote sehen kann. Oder man schafft es nicht und benutzt einen Hinweis, um durch das Level zu kommen. Und ganz am Ende der Entwicklung der ersten Version konnte man sogar sehen, welche Level man perfekt bestanden hat und welche nicht. Es war auch lustig, einen kleinen Scherz des Entwicklers in Form der „Three Puntos“-Button hinzuzufügen.
+
+Die interessanteste Entscheidung für dieses Projekt ist meiner Meinung nach die Hinzufügung einer Entwicklerbutton, mit der man Hinweise für die Spieler erstellen kann. Ja, natürlich ist diese Art des Hinzufügens von Hinweisen manuell, aber ich wollte ursprünglich so etwas „für den Entwickler“ haben. Vielleicht werde ich in Zukunft die Funktionalität weiterentwickeln und die Entwickler-Button wird sich schliesslich in ein ganzes Entwickler-Panel verwandeln.
+
+Am Ende ist das Wichtigste, dass es Spass gemacht hat.
