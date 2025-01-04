@@ -3,7 +3,7 @@
 
 # fertiges Projekt
 ## flewe v1.0
-The first full version of the attempt to remake the game **flow.io** in my own way. Contains all the basic mechanics of the original game, 20 unique levels with two hints in each, percentages of perfection of each passage of the level and the display of the ideal passage of the level in the main menu.
+The first full version of the attempt to remake the game **Flow Free** in my own way. Contains all the basic mechanics of the original game, 20 unique levels with two hints in each, percentages of perfection of each passage of the level and the display of the ideal passage of the level in the main menu.
 
 In the next version:
 - Improved graphics
